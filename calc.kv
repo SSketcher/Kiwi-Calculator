@@ -1,0 +1,162 @@
+#:kivy 2.0
+<Button>
+    background_normal: ''
+    color: (13/255, 13/255, 13/255, 1)
+    font_size: 20
+    size_hint: (.2, .15)
+
+<StandardCalc>
+    canvas.before:
+        Color:
+            rgba: (191/255, 191/255, 191/255, 1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        
+        Label:
+            id: calc_equation
+            text: ''
+            text_size: self.size
+            halign: "right"
+            color: (80/255, 80/255, 80/255, 1)
+            font_size: 32
+            size_hint: (0.96, .15)
+
+        TextInput:
+            id: calc_input
+            text: "0"
+            multiline: False
+            halign: "right"
+            font_size: 44
+            size_hint: (1, .15)
+            background_normal: ''
+            background_color: (191/255, 191/255, 191/255, 1)
+
+        GridLayout:
+            cols: 4
+            rows: 6
+            spacing: 2
+            padding: 4
+
+            Button:
+                text: "%"
+                background_color: (242/255, 242/255, 242/255, 1)
+                on_press: root.mathfunc(1)
+             
+            Button:
+                text: "CE"
+                background_color: (242/255, 242/255, 242/255, 1)
+                on_press: root.clear()
+
+            Button:
+                text: "C"
+                background_color: (242/255, 242/255, 242/255, 1)
+                on_press: root.clear_all()
+
+            Button:
+                text: u"\u00AB"
+                background_color: (242/255, 242/255, 242/255, 1)
+                on_press: root.erase()
+
+            Button:
+                text: "1/" + u"\u0078"
+                background_color: (242/255, 242/255, 242/255, 1)
+                on_press: root.mathfunc(2)
+
+            Button:
+                text: u"\u0078" + u"\u00B2"
+                background_color: (242/255, 242/255, 242/255, 1)
+                on_press: root.mathfunc(3)
+
+            Button:
+                text: u"\u221A"
+                background_color: (242/255, 242/255, 242/255, 1)
+                on_press: root.mathfunc(4)
+
+            Button:
+                text: "/"
+                background_color: (242/255, 242/255, 242/255, 1)
+                on_press: root.math_operation('/')
+
+            Button:
+                text: "7"
+                background_color: (1, 1, 1, 1)
+                on_press: root.numeric_keypad(7)
+
+            Button:
+                text: "8"
+                background_color: (1, 1, 1, 1)
+                on_press: root.numeric_keypad(8)
+
+            Button:
+                text: "9"
+                background_color: (1, 1, 1, 1)
+                on_press: root.numeric_keypad(9)
+
+            Button:
+                text: "x"
+                background_color: (242/255, 242/255, 242/255, 1)
+                on_press: root.math_operation('*')
+
+            Button:
+                text: "4"
+                background_color: (1, 1, 1, 1)
+                on_press: root.numeric_keypad(4)
+
+            Button:
+                text: "5"
+                background_color: (1, 1, 1, 1)
+                on_press: root.numeric_keypad(5)
+
+            Button:
+                text: "6"
+                background_color: (1, 1, 1, 1)
+                on_press: root.numeric_keypad(6)
+
+            Button:
+                text: "-"
+                background_color: (242/255, 242/255, 242/255, 1)
+                on_press: root.math_operation('-')
+
+            Button:
+                text: "1"
+                background_color: (1, 1, 1, 1)
+                on_press: root.numeric_keypad(1)
+
+            Button:
+                text: "2"
+                background_color: (1, 1, 1, 1)
+                on_press: root.numeric_keypad(2)
+
+            Button:
+                text: "3"
+                background_color: (1, 1, 1, 1)
+                on_press: root.numeric_keypad(3)
+
+            Button:
+                text: "+"
+                background_color: (242/255, 242/255, 242/255, 1)
+                on_press: root.math_operation('+')
+
+            Button:
+                text: "+/-"
+                background_color: (1, 1, 1, 1)
+                on_press: root.change_sign()
+
+            Button:
+                text: "0"
+                background_color: (1, 1, 1, 1)
+                on_press: root.numeric_keypad(0)
+
+            Button:
+                text: ","
+                background_color: (1, 1, 1, 1)
+                on_press: root.decimal_point()
+
+            Button:
+                text: "="
+                background_color: (137/255, 186/255, 217/255, 1)
+                on_press: root.math_operation('=')
