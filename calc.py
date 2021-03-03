@@ -27,14 +27,18 @@ class StandardCalc(Widget):
             pass
 
         signs = ['-', '(']
-
-        for sign in signs:
-            if self.current_operation == '-':
-                self.current_operation = ''
-            elif sign in self.current_operation:
-                self.current_operation = f'({self.current_operation})'
-            else:
-                pass
+        try:
+            for sign in signs:
+                if self.current_operation == '-':
+                    self.current_operation = ''
+                elif self.current_operation[0] == '(' and self.current_operation[-1] == ")":
+                    pass
+                elif sign in self.current_operation:
+                    self.current_operation = f'({self.current_operation})'
+                else:
+                    pass
+        except:
+            pass
 
         if self.current_equation == '' and self.current_operation == '':
             self.ids.calc_input.text = ''
