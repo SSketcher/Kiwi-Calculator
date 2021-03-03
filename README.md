@@ -4,6 +4,7 @@ This project is about creating calculator using Kivy and Python.
 ## General info
 Standard calculator based on Windows 10 calculator.
 This is kiwi, my own calculator for calculating stuff. This isn't its final form, but it atleast follows the order of operations.
+![alt text](https://github.com/SSketcher/Python---Kiwi_Calculator/blob/main/images/StandardCalc.png?raw=true)
 
 ## Technologies
 * Python 3.6
